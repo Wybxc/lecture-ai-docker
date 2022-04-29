@@ -1,7 +1,8 @@
 FROM pytorchlightning/pytorch_lightning
-RUN apt-key del 7fa2af80 && apt-key del A4B469963BF863CC \
+RUN apt-key del 7fa2af80 && \
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb && \
-dpkg -i cuda-keyring_1.0-1_all.deb && \
+dpkg -i cuda-keyring_1.0-1_all.deb
+RUN apt-key del A4B469963BF863CC && \
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb && \
 dpkg -i cuda-keyring_1.0-1_all.deb
 RUN apt-get update && apt-get install -y libsndfile1 ffmpeg
