@@ -1,8 +1,9 @@
 name: Docker Image CI
 
 on:
-  tags:
-    - v*
+  push:
+    tags:
+      - v*
 
 env:
   # 设置 docker 镜像名
